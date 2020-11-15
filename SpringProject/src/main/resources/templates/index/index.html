@@ -1,14 +1,32 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:replace="layout/head_init :: headLinkInit">
-
+<head th:replace="layout/head_init :: headLinkInit"></head>
+<head>
+	<style type="text/css">
+		
+	</style>
 </head>
 <body>
-	<h2>index page test</h2>
 	
-	<div th:replace="layout/footer :: footer"></div>
+	<div class="mainLayout">
+		<div class="headerLayout">
+			<h2>header layout</h2>
+		</div>
+		
+		<div class="mainLayout">
+			<h2>main layout</h2>
+		</div>
+		
+		<div class="footerLayout">
+			<h2>footer layout</h2>
+			<div th:replace="layout/footer :: footer"></div>
+		</div>
+		
+		<div class="scriptLayout">
+			<th:block th:replace="layout/javascriptLayout :: scriptLayout"></th:block>
+		</div>
+		
+	</div>
 </body>
-
-<th:block th:replace="layout/javascriptLayout :: scriptLayout"></th:block>
 </html>

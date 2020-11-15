@@ -1,14 +1,51 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/head_init :: headLinkInit"></head>
 <head>
-<meta charset="UTF-8">
+	<style type="text/css">
+		.mainLayout
+		{
+			text-align: center;	
+		}
+		
+		.userLoginStyle
+		{
+			width: 50%;
+			margin: 1% 0 0 0;
+		}
+		
+	</style>
 </head>
 <body>
 
-<form action="/userMypage/" method="post">
-	<input type="text" name="id">
-	<input type="submit" value="submit">
-</form>
+	<div class="mainLayout">
+		
+		<div class="headerBlank">
+			<div style="height: 150px; width: 100%;"></div>
+			<div th:replace="layout/topLayout :: top"></div>
+		</div>
+		
+		<div class="mainLayout">
+			<form action="/userMypage/" method="post">
+				<div>
+					<input class="userLoginStyle" type="text" name="id">
+				</div>
+				<div>
+					<input class="userLoginStyle" type="text" name="password">
+				</div>
+				<div>
+					<input class="userLoginStyle" type="submit" value="submit">
+				</div>
+			</form>
+		</div>
+		
+		<div class="footerLayout">
+			<div th:replace="layout/footer :: footer"></div>
+		</div>
+		
+	</div>
+
 
 </body>
 </html>
